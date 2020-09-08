@@ -1,38 +1,8 @@
-/*MAIN COLORS FOR HOWA THEME VARIABLES*/
-
-$color-white: #fff;
-$color-black: #000;
-$color-primary: #3B6978;
-$color-primary-light: #84A9AC;
-$color-primary-dark: #204051;
-$color-highlight-1: #9F283A;
-$color-highlight-2: #EE8433;
-$color-grey:#E4E3E3;
-
-
-/*MIXINS */
-
-
-@mixin center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/*Reset Site*/
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
-    font-family: sans-serif;
-    color: $color-white;
-}
-
+@import '../styles.scss';
 
 .wrapper{
     /*Background image*/
-    background-image:url(../img/steven-kamenar-MMJx78V7xS8-unsplash.jpg);
+    background-image:url(../assets/img/steven-kamenar-MMJx78V7xS8-unsplash.jpg);
     background-size: cover;
     background-position: center;
 
