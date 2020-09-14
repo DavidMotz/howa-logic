@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import rifles from './';
+import rifles from '../assets/list.json';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +8,9 @@ import rifles from './';
 })
 export class AppComponent {
   title = 'howalogic';
+
+  constructor(){
+    console.log(rifles[0]);
+  }
+
 }
