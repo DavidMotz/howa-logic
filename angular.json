@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "howalogic"
+    }
+  },
+  "defaultProject": "howalogic",
+  "cli": {
+    "analytics": false
+  }
 }

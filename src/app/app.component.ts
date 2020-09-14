@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import rifles from './';
 
 @Component({
   selector: 'app-root',
