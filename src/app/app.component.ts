@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import rifles from '../assets/list.json';
+import {DatabaseService} from './core/services/database.service';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +10,8 @@ import rifles from '../assets/list.json';
 export class AppComponent {
   title = 'howalogic';
 
-  constructor(){
-    console.log(rifles[0]);
+  constructor(private database: DatabaseService){
+
   }
 
 }
