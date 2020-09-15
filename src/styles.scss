@@ -34,3 +34,9 @@ $color-grey:#E4E3E3;
 app-root{
   @include center;
 }
+
+.active{
+  background-color: $color-primary-dark;
+  transition: all .7s;
+  color: $color-white;
+}

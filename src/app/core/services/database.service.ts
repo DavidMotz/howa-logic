@@ -17,14 +17,29 @@ export class DatabaseService {
     this.items.subscribe(data => {
       console.log('hello ', data);
       this.currentItems = data;
-      for(let i of this.currentItems){
-        this.filteredItems.includes(i.Kaliber) ? undefined : this.filteredItems.push(i.Kaliber);
-      }
+      this.filteredItems = this.group(this.currentItems, 'Kaliber');
       console.log(this.filteredItems);
 
     });
 
 
 
+   }
+
+   filterFurther(originalArr:Rifles[], key:string, value: string):Rifles[]{
+    return originalArr.filter(x => {
+      for(let [i, c] of Object.entries(x)){
+        if (i ===  key && value === c)
+        return true;
+      }
+    })
+   }
+
+   group(originalArr:Rifles[], key:string):string[]{
+     let returnArr = [];
+     for(let i of originalArr){
+      returnArr.includes(i[key]) ? undefined : returnArr.push(i[key]);
+    }
+    return returnArr;
    }
 }

@@ -18,7 +18,7 @@
                     <h3 class="choose-box-header-heading">Kaliberauswahl</h3>
                 </div>
                 <ul class="choose-box-list">
-                    <li class="choose-box-list-item"><a href="#" class="choose-box-list-item-link">.204 Ruger</a></li>
+                    <li [class.active]=" systemWahlObj['Kaliber'] === i" (click)="selectedCal(i)" *ngFor="let i of database.filteredItems" class="choose-box-list-item"><a href="#" class="choose-box-list-item-link">{{i}}</a></li>
                 </ul>
             </div>
             <div class="choose-box">
@@ -26,20 +26,9 @@
                     <h3 class="choose-box-header-heading">Systemauswahl</h3>
                 </div>
                 <ul class="choose-box-list">
-                    <li class="choose-box-list-item"><a href="" class="choose-box-list-item-link">
+                    <li (click)="selectedSys(x)" *ngFor="let x of systemWahlStr" class="choose-box-list-item"><a href="#" class="choose-box-list-item-link">
                         <div class="choose-box-list-item-link-divider">
-                            <h4 class="choose-box-list-item-link-divider-system">24"Lauf - 12"Drall</h4>
-                            <p class="choose-box-list-item-link-divider-desc">Cerakote m. Stainless Optik<br>Short Action / heavy Barrell</p>
-                        </div></a></li>
-                    <li class="choose-box-list-item"><a href="" class="choose-box-list-item-link">
-                        <div class="choose-box-list-item-link-divider">
-                            <h4 class="choose-box-list-item-link-divider-system">24"Lauf - 12"Drall</h4>
-                            <p class="choose-box-list-item-link-divider-desc">Cerakote m. Stainless Optik<br>Short Action / heavy Barrell</p>
-                        </div></a></li>
-                    <li class="choose-box-list-item"><a href="" class="choose-box-list-item-link">
-                        <div class="choose-box-list-item-link-divider">
-                            <h4 class="choose-box-list-item-link-divider-system">24"Lauf - 12"Drall</h4>
-                            <p class="choose-box-list-item-link-divider-desc">Cerakote m. Stainless Optik<br>Short Action / heavy Barrell</p>
+                            <p class="choose-box-list-item-link-divider-desc">{{x}}</p>
                         </div></a></li>
                 </ul>
             </div>
@@ -48,27 +37,11 @@
                     <h3 class="choose-box-header-heading">Schaftauswahl</h3>
                 </div>
                 <ul class="choose-box-list">
-                    <li class="choose-box-list-item"><a href="" class="choose-box-list-item-link">
+                    <li *ngFor=" let y of schaftWahlObj" class="choose-box-list-item"><a href="#" class="choose-box-list-item-link">
                         <div class="choose-box-list-item-link-divider">
-                            <h4 class="choose-box-list-item-link-divider-system">Hogue</h4>
-                            <p class="choose-box-list-item-link-divider-desc">Pillar Beding Schwarz</p>
+                            <!-- <h4 class="choose-box-list-item-link-divider-system">Hogue</h4> -->
+                            <p class="choose-box-list-item-link-divider-desc">{{y.Schaft}}</p>
                         </div></a></li>
-                    <li class="choose-box-list-item"><a href="" class="choose-box-list-item-link">
-                        <h4 class="choose-box-list-item-link-divider-system">Hogue</h4>
-                        <p class="choose-box-list-item-link-divider-desc">Pillar Beding Olivgrün</p>
-                    </a></li>
-                    <li class="choose-box-list-item"><a href="" class="choose-box-list-item-link">
-                        <h4 class="choose-box-list-item-link-divider-system">Hogue</h4>
-                        <p class="choose-box-list-item-link-divider-desc">Full Length Aluminium Bedding Block<br>(FLABB) Schwarz</p>
-                    </a></li>
-                    <li class="choose-box-list-item"><a href="" class="choose-box-list-item-link">
-                        <h4 class="choose-box-list-item-link-divider-system">Varminter Supreme</h4>
-                        <p class="choose-box-list-item-link-divider-desc">Nutmeg Style</p>
-                    </a></li>
-                    <li class="choose-box-list-item"><a href="" class="choose-box-list-item-link">
-                        <h4 class="choose-box-list-item-link-divider-system">Varminter Supreme</h4>
-                        <p class="choose-box-list-item-link-divider-desc">Pepperstyle</p>
-                    </a></li>
                 </ul>
             </div>
         </div>
