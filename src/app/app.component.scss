@@ -57,6 +57,7 @@
 
 .choose-box{
     margin: 2rem;
+    max-width: 20rem;
 
     &-header{
         @include center;
