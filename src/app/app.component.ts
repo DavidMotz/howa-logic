@@ -14,6 +14,8 @@ export class AppComponent {
   systemWahlObj:Rifles[] = [];
   systemWahlStr: string[] = [];
   schaftWahlObj:Rifles[] = [];
+  imageSchaft:string;
+  imageSystem:string;
   selectedObj:{Kaliber: string, System: string, Schaft: string} = {Kaliber:null, System:null, Schaft:null}
 
   constructor(public database: DatabaseService, private ref:ChangeDetectorRef){
@@ -32,8 +34,18 @@ export class AppComponent {
 
     this.schaftWahlObj = this.database.filterFurther(this.systemWahlObj, 'System', name);
     this.selectedObj.Kaliber = name;
+    this.imageSystem = name.substr(1);
     console.log("Ich wurde aufgerufen", this.schaftWahlObj);
     }
+
+  selectedSchaft(name:string){
+    console.log("Images wurde aufgerufen");
+
+    this.imageSchaft = name.substr(1);
+
+    console.log("Ausgegeben", this.imageSchaft);
+
+  }
 
 
 }
