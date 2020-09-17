@@ -37,7 +37,7 @@
                     <h3 class="choose-box-header-heading">Schaftauswahl</h3>
                 </div>
                 <ul class="choose-box-list">
-                    <li (click)="selectedSchaft(y['Sch-Image'])" *ngFor=" let y of schaftWahlObj" class="choose-box-list-item"><a href="#" class="choose-box-list-item-link">
+                    <li (click)="selectedSchaft(y)" *ngFor=" let y of schaftWahlObj" class="choose-box-list-item"><a href="#" class="choose-box-list-item-link">
                         <div class="choose-box-list-item-link-divider">
                             <!-- <h4 class="choose-box-list-item-link-divider-system">Hogue</h4> -->
                             <p class="choose-box-list-item-link-divider-desc">{{y.Schaft}}</p>
@@ -47,12 +47,12 @@
         </div>
         <div class="pic-container">
             <div class="pic-container-schsys">
+              <div class="pic-container-schsys-schaft">
+                  <img *ngIf=" imageSystem  && imageSystem !== '0'; else noImage" [src]="'assets/img/Images/system'+imageSystem+'.png'" alt="System (Beschreibung)" class="pic-container-schsys-pic">
+                  <ng-template #noImage></ng-template>
+              </div>
             <div class="pic-container-schsys-system">
                 <img *ngIf=" imageSchaft  && imageSchaft !== '0'; else noImage" [src]="'assets/img/Images/schaft'+imageSchaft+'.png'" alt="System (Beschreibung)" class="pic-container-schsys-pic">
-                <ng-template #noImage></ng-template>
-            </div>
-            <div class="pic-container-schsys-schaft">
-                <img *ngIf=" imageSystem  && imageSystem !== '0'; else noImage" [src]="'assets/img/Images/system'+imageSystem+'.png'" alt="System (Beschreibung)" class="pic-container-schsys-pic">
                 <ng-template #noImage></ng-template>
             </div>
         </div>

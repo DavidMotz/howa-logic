@@ -27,25 +27,42 @@ export class AppComponent {
     this.systemWahlStr = this.database.group(this.systemWahlObj, 'System');
     this.selectedObj.Kaliber = name;
     this.schaftWahlObj = [];
-    console.log(this.systemWahlObj);
+    this.imageSchaft = null;
+    this.imageSystem = null;
   }
 
   selectedSys(name:string){
 
     this.schaftWahlObj = this.database.filterFurther(this.systemWahlObj, 'System', name);
     this.selectedObj.Kaliber = name;
-    this.imageSystem = name.substr(1);
-    console.log("Ich wurde aufgerufen", this.schaftWahlObj);
-    }
+    let rueckgabe = this.findObj(this.systemWahlObj, 'System', name);
+    if (rueckgabe){
+      this.imageSystem = rueckgabe["Sys-Image"].substr(1);
 
-  selectedSchaft(name:string){
+    }
+  }
+
+  selectedSchaft(name:Rifles){
     console.log("Images wurde aufgerufen");
 
-    this.imageSchaft = name.substr(1);
+    this.imageSchaft = name["Sch-Image"].substr(1);
+    this.imageSystem = name["Sys-Image"].substr(1);
 
     console.log("Ausgegeben", this.imageSchaft);
 
   }
 
+  findObj(rifleArr:Rifles[], key:string, value:string){
+    console.log("findObj ausgegeben");
+    console.log(rifleArr, key, value);
+
+    return rifleArr.find(rifle => {
+      if (rifle[key] == value){
+        console.log("found");
+        return true
+      }
+      return false;
+    });
+  }
 
 }
