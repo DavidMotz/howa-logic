@@ -5,6 +5,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from 'src/app/app.component';
 import { environment } from 'src/environments/environment';
 import { Rifles } from '../interface/rifles';
+import { FireDatabaseDummy } from '../Tests/Fire-db-dummy';
 
 import { DatabaseService } from './database.service';
 
@@ -18,7 +19,7 @@ describe('DatabaseService', () => {
           RouterTestingModule,
           AngularFireModule.initializeApp(environment.firebaseConfig),
           ],
-        providers:[AngularFireDatabase],
+        providers:[{provide: AngularFireDatabase, useClass: FireDatabaseDummy}],
         declarations: [
           AppComponent
         ],
